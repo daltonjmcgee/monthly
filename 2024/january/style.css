@@ -12,8 +12,6 @@ div.screen {
   position: fixed;
   width: 100vw;
   height: 100vh;
-  animation: black-to-white 2s ease-in 0s;
-  animation-fill-mode: forwards;
 }
 
 div.projector {
@@ -22,12 +20,9 @@ div.projector {
   width: 100vw;
   height: 100vh;
   top: 0;
-  animation: film-flicker 0.04s steps(24) 160;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
 }
 
-div.name {
+div.colors {
   position: relative;
   width: 421.33px;
   height: 5rem;
@@ -35,8 +30,6 @@ div.name {
   top: 50%;
   transform: translateY(-50%);
   opacity: 0;
-  animation: turn-on-projector 2s ease-in 2s;
-  animation-fill-mode: forwards;
 }
 
 h1 {
@@ -56,23 +49,55 @@ h1 > span {
 
 .red {
   color: #ff0000;
-  transform: translate(-105px, -4px);
-  animation: red-up-and-down 3s steps(72) 2s, red-movement 2.5s ease 3.75s;
 }
 
 .green {
   user-select: none;
   color: #00ff00;
-  transform: translate(115px, 6px);
-  animation: green-up-and-down 2.45s steps(72) 2.15s,
-    green-movement 2.25s ease 4.5s;
 }
 
 .blue {
   user-select: none;
   color: #0000ff;
-  transform: translate(-30px, -2px);
-  animation: blue-up-and-down 2.75s steps(72) 1.75s, blue-movement 1.85s ease 4s;
+}
+
+/* Put the animations within a no-preference query so that those who don't want to see animation
+don't have to see it. */
+@media (prefers-reduced-motion: no-preference) {
+  div.screen {
+    animation: black-to-white 2s ease-in 0s;
+    animation-fill-mode: forwards;
+  }
+
+  div.projector {
+    animation: film-flicker 0.04s steps(24) 160;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+  div.colors {
+    animation: turn-on-projector 2s ease-in 2s;
+    animation-fill-mode: forwards;
+  }
+
+  .red {
+    transform: translate(-105px, -4px);
+    animation: red-up-and-down 3s steps(72) 2s, red-movement 2.5s ease 3.75s;
+  }
+
+  .green {
+    transform: translate(115px, 6px);
+    animation: green-up-and-down 2.45s steps(72) 2.15s,
+      green-movement 2.25s ease 4.5s;
+  }
+
+  .blue {
+    user-select: none;
+    color: #0000ff;
+    transform: translate(-30px, -2px);
+    animation: blue-up-and-down 2.75s steps(72) 1.75s,
+      blue-movement 1.85s ease 4s;
+  }
 }
 
 @keyframes film-flicker {
