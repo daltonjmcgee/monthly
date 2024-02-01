@@ -1,24 +1,31 @@
 html,
 body {
   margin: 0;
+  background-color: #000;
   font-family: "Advent Pro", sans-serif;
-  width: 100vw;
-  height: 100vh;
-  font-size: 16px;
+  width: 50vw;
+  aspect-ratio: 4/3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
 }
 
 div.screen {
   background-color: transparent;
   position: fixed;
-  width: 100vw;
-  height: 100vh;
+  width: 50vw;
+  aspect-ratio: 4/3;
+  filter: sepia(15%);
 }
 
 div.projector {
   background-color: transparent;
   position: fixed;
-  width: 100vw;
-  height: 100vh;
+  width: 50vw;
+  aspect-ratio: 4/3;
   top: 0;
 }
 
@@ -39,6 +46,7 @@ h1 {
   font-weight: 300;
   margin: 0;
   animation-fill-mode: forwards !important;
+  filter: grayscale(33%);
 }
 
 h1 > span {
@@ -123,7 +131,7 @@ don't have to see it. */
   }
 
   100% {
-    background-color: #eee;
+    background-color: #ddd;
   }
 }
 
