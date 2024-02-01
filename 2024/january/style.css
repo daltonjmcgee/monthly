@@ -8,14 +8,14 @@ body {
 }
 
 div.screen {
-  background-color: #000;
+  background-color: transparent;
   position: fixed;
   width: 100vw;
   height: 100vh;
 }
 
 div.projector {
-  background-color: #000;
+  background-color: transparent;
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -29,7 +29,6 @@ div.colors {
   margin-inline: auto;
   top: 50%;
   transform: translateY(-50%);
-  opacity: 0;
 }
 
 h1 {
@@ -65,17 +64,20 @@ h1 > span {
 don't have to see it. */
 @media (prefers-reduced-motion: no-preference) {
   div.screen {
+    background-color: #000;
     animation: black-to-white 2s ease-in 0s;
     animation-fill-mode: forwards;
   }
 
   div.projector {
+    background-color: #000;
     animation: film-flicker 0.04s steps(24) 160;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
   }
 
   div.colors {
+    opacity: 0;
     animation: turn-on-projector 2s ease-in 2s;
     animation-fill-mode: forwards;
   }

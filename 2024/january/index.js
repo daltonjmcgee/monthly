@@ -25,4 +25,6 @@ function setEventListener() {
   });
 }
 
-setTimeout(() => setEventListener(), 6500);
+if (window.matchMedia("(prefers-reduced-motion: no-preference)")) {
+  setTimeout(() => setEventListener(), 6500);
+}
