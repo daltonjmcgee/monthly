@@ -50,6 +50,9 @@ h1 > span {
   color: #ff0000;
 }
 
+/* User select is none because we don't want someone copy and pasting to be grab all three 
+"Dalton McGee" text elements. Similarly the HTML has an aria-hidden=true so screen readers 
+won't see all three of them when reading the page. */
 .green {
   user-select: none;
   color: #00ff00;
@@ -90,7 +93,7 @@ don't have to see it. */
   .green {
     transform: translate(115px, 6px);
     animation: green-up-and-down 2.45s steps(72) 2.15s,
-      green-movement 2.25s ease 4.5s;
+      green-movement 2.25s ease 4s;
   }
 
   .blue {
@@ -98,7 +101,7 @@ don't have to see it. */
     color: #0000ff;
     transform: translate(-30px, -2px);
     animation: blue-up-and-down 2.75s steps(72) 1.75s,
-      blue-movement 1.85s ease 4s;
+      blue-movement 1.85s ease 4.4s;
   }
 }
 
@@ -139,6 +142,10 @@ don't have to see it. */
     transform: translate(-85px, 0);
   }
 
+  94% {
+    transform: translate(-2px, 0);
+  }
+
   100% {
     transform: translate(0, 0);
   }
@@ -149,6 +156,10 @@ don't have to see it. */
     transform: translate(176px, 0);
   }
 
+  90% {
+    transform: translate(-5px, 0);
+  }
+
   100% {
     transform: translate(0, 0);
   }
@@ -157,6 +168,10 @@ don't have to see it. */
 @keyframes blue-movement {
   50% {
     transform: translate(-60px, 0);
+  }
+
+  85% {
+    transform: translate(5px, 0);
   }
 
   100% {
